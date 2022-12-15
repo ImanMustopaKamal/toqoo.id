@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Link, NavLink, withRouter } from "react-router-dom";
 
 import {
   Box,
@@ -36,13 +37,22 @@ class Header extends Component {
   render() {
     return (
       <header className="header" id="header">
-        <Container>
+        <Container maxWidth={"lg"}>
           <Box className="header-content">
             <Box className="brand">
-              <Typography variant="h3">My Header</Typography>
+              <Button color="secondary" component={NavLink} to={"/"}>
+                <Typography variant="h3" color="secondary.light">
+                  Logo
+                </Typography>
+              </Button>
             </Box>
-            <Stack direction="row" spacing={2} className="header-menu">
-              <div>
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={2}
+              className="header-menu"
+            >
+              {/* <div>
                 <Button
                   ref={(button) => (this.homeButton = button)}
                   id="homebutton"
@@ -50,6 +60,7 @@ class Header extends Component {
                   onMouseLeave={this.handleClose}
                   name="homebutton"
                   sx={{ zIndex: 1301 }}
+                  color="secondary.light"
                   endIcon={<KeyboardArrowDownIcon />}
                 >
                   Home
@@ -93,67 +104,23 @@ class Header extends Component {
                     Logout
                   </MenuItem>
                 </Menu>
-              </div>
-              <div>
-                <Button>Features</Button>
-              </div>
-              <div>
-                <Button>How it works</Button>
-              </div>
-              <div>
-                <Button
-                  ref={(button) => (this.pageButton = button)}
-                  id="pagebutton"
-                  onMouseOver={this.handleOpen}
-                  onMouseLeave={this.handleClose}
-                  name="pagebutton"
-                  sx={{ zIndex: 1301 }}
-                  endIcon={<KeyboardArrowDownIcon />}
-                >
-                  Pages
-                </Button>
-                <Menu
-                  PaperProps={{
-                    onMouseEnter: () => {
-                      this.setState({ pagebutton: true });
-                    },
-                    onMouseLeave: () => {
-                      this.setState({ pagebutton: false });
-                    },
-                  }}
-                  id="pagemenu"
-                  anchorEl={this.pageButton}
-                  open={this.state.pagebutton}
-                  onClose={() => {
-                    this.setState({ pagebutton: false });
-                  }}
-                  MenuListProps={{
-                    "aria-labelledby": "pagebutton",
-                  }}
-                >
-                  <MenuItem
-                    onClick={() => {
-                      this.setState({ pagebutton: false });
-                    }}
-                  >
-                    Profile
-                  </MenuItem>
-                  <MenuItem
-                    onClick={() => {
-                      this.setState({ pagebutton: false });
-                    }}
-                  >
-                    My account
-                  </MenuItem>
-                  <MenuItem
-                    onClick={() => {
-                      this.setState({ pagebutton: false });
-                    }}
-                  >
-                    Logout
-                  </MenuItem>
-                </Menu>
-              </div>
+              </div> */}
+              <Button color="secondary" component={NavLink} to={"/fitur"}>
+                Fitur
+              </Button>
+              <Button color="secondary">Benefit</Button>
+              <Button color="secondary">Hardware</Button>
+              <Button color="secondary">Harga</Button>
+              <Button color="secondary">Testimoni</Button>
+              <Button color="secondary">FAQ</Button>
+              <Button color="secondary">Kontak</Button>
+              <Button color="secondary">Coba Gratis</Button>
+              <Button
+                variant="contained"
+                sx={{ borderRadius: "25px", padding: "8px 40px" }}
+              >
+                Login
+              </Button>
             </Stack>
             <IconButton
               className="header-menu-mobile"
@@ -177,4 +144,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
+// export default withStyles(styles, { withTheme: true })(
+//   (connect(mapStateToProps)(Header))
+// )
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

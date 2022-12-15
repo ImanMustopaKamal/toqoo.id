@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  // Redirect,
 } from "react-router-dom";
 
 import {
@@ -15,11 +14,16 @@ import {
   CssBaseline,
   Backdrop,
   Container,
+  Stack
 } from "@mui/material";
+
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 import theme from "./component/theme";
 import Header from "./component/section/header";
-import Home from "./component/section/home";
+import Home from "./component/page/home";
+
 import "./App.css";
 
 class App extends Component {
@@ -32,10 +36,10 @@ class App extends Component {
 
   componentDidMount() {
     const ctx = this;
-    const doc = document.getElementById("backdrop");
-    const top = doc.offsetTop;
+    // const doc = document.getElementById("backdrop");
+    // const top = doc.offsetTop;
     // const bottom = doc.offset
-    const height = doc.offsetHeight;
+    // const height = doc.offsetHeight;
     var header = document.getElementById("header");
     var sticky = header.offsetTop;
     window.onscroll = function () {
@@ -44,16 +48,16 @@ class App extends Component {
       } else {
         header.classList.remove("sticky");
       }
-      if (window.pageYOffset > top) {
-        if (window.pageYOffset < top + height) {
-          ctx.setState({ open: true });
-        } else {
-          ctx.setState({ open: false });
-        }
-      }
-      if (window.pageYOffset < top) {
-        ctx.setState({ open: false });
-      }
+      // if (window.pageYOffset > top) {
+      //   if (window.pageYOffset < top + height) {
+      //     ctx.setState({ open: true });
+      //   } else {
+      //     ctx.setState({ open: false });
+      //   }
+      // }
+      // if (window.pageYOffset < top) {
+      //   ctx.setState({ open: false });
+      // }
     };
   }
 
@@ -66,183 +70,10 @@ class App extends Component {
             <Header />
             <Switch>
               <Route exact path="/">
-                <Box className="content">
-                  <Container>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <Home open={this.state.open} />
-                    <h3>Lorem</h3>
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum
-                    </p>
-                    <p>Lorem</p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>{" "}
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>{" "}
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>{" "}
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, illum definitiones no quo,
-                      maluisset concludaturque et eum, altera fabulas ut quo.
-                      Atqui causae gloriatur ius te, id agam omnis evertitur
-                      eum. Affert laboramus repudiandae nec et. Inciderint
-                      efficiantur his ad. Eum no molestiae voluptatibus.
-                    </p>
-                  </Container>
-                </Box>
+                <Home />
               </Route>
-              <Route exact path="/about">
-                <Typography variant="h1">About</Typography>
+              <Route exact path="/fitur">
+                <Typography variant="h1">Fitur</Typography>
               </Route>
             </Switch>
           </Router>

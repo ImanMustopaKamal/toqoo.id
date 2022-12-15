@@ -1,26 +1,43 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#52CEC2",
+      dark: "#45B6AB",
+    },
+    secondary: {
+      main: "#333348",
+      light: "#3E3F66",
+      dark: "#E52A34",
+    },
+  },
   typography: {
     fontFamily: `"Manrope"`,
-    fontSize: 14,
-    fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
+    // fontSize: 14,
+    // fontWeightLight: 300,
+    // fontWeightRegular: 400,
+    // fontWeightMedium: 500,
     p: {
-      fontSize: "14px",
+      fontSize: "16px",
       fontFamily: ["Manrope"].join(","),
+      lineHeight: "22px",
+      fontWeight: 400,
       "@media (max-width:600px)": {
-        fontSize: "14px",
+        fontSize: "16px",
         fontFamily: ["Manrope"].join(","),
+        lineHeight: "22px",
+        fontWeight: 400,
       },
     },
     h5: {
-      fontSize: "16px",
+      fontSize: "18px",
       fontFamily: ["Manrope"].join(","),
+      lineHeight: "22px",
       "@media (max-width:600px)": {
-        fontSize: "14px",
+        fontSize: "16px",
         fontFamily: ["Manrope"].join(","),
+        lineHeight: "22px",
       },
     },
     h4: {
@@ -40,31 +57,99 @@ const theme = createTheme({
       },
     },
     h2: {
-      fontSize: "32px",
+      fontSize: "38px",
+      fontWeight: 800,
+      lineHeight: "60px",
       fontFamily: ["Manrope"].join(","),
       "@media (max-width:600px)": {
-        fontSize: "24px",
+        fontSize: "32px",
+        fontWeight: 800,
+        lineHeight: "60px",
         fontFamily: ["Manrope"].join(","),
       },
     },
     h1: {
-      fontSize: "42px",
+      fontSize: "45px",
       fontFamily: ["Manrope"].join(","),
+      fontWeight: 800,
+      lineHeight: "60px",
       "@media (max-width:600px)": {
-        fontSize: "32px",
+        fontSize: "30px",
         fontFamily: ["Manrope"].join(","),
+        fontWeight: 800,
+        lineHeight: "60px",
       },
     },
   },
   components: {
     MuiButton: {
-      root: {
-        fontFamily: ["Manrope"].join(","),
+      styleOverrides: {
+        contained: {
+          color: "#fff",
+          fontSize: "16px",
+          textTransform: "capitalize",
+        },
+        outlined: {
+          fontSize: "16px",
+          textTransform: "capitalize",
+        },
+        text: {
+          fontSize: "16px",
+          textTransform: "capitalize",
+          "&:hover": {
+            color: "#52CEC2",
+            background: "unset",
+          },
+        },
       },
     },
-    MuiButtonBase: {
-      root: {
-        fontFamily: ["Manrope"].join(","),
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          background: "rgba(255, 255, 255, 0.8)",
+          border: "1px solid #FFFFFF",
+          boxShadow: "0px 4px 30px #EDE9FE",
+          borderRadius: "30px",
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          marginBottom: "20px",
+          boxShadow: "none",
+          borderRadius: "12px",
+          "&:before": {
+            background: "unset",
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          background: "#EDEFF1",
+          borderTopLeftRadius: "12px",
+          borderTopRightRadius: "12px",
+          borderBottomLeftRadius: "12px",
+          borderBottomRightRadius: "12px",
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          background: "#EDEFF1",
+          borderBottomLeftRadius: "12px",
+          borderBottomRightRadius: "12px",
+        },
+      },
+    },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: "#fff",
+        },
       },
     },
   },
