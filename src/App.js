@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 import {
   Box,
@@ -14,7 +12,7 @@ import {
   CssBaseline,
   Backdrop,
   Container,
-  Stack
+  Stack,
 } from "@mui/material";
 
 import "slick-carousel/slick/slick-theme.css";
@@ -22,9 +20,13 @@ import "slick-carousel/slick/slick.css";
 
 import theme from "./component/theme";
 import Header from "./component/section/header";
+import Footer from "./component/section/footer";
 import Home from "./component/page/home";
+import Fitur from "./component/page/fitur";
+import Hardware from "./component/page/hardware";
 
 import "./App.css";
+import Benefit from "./component/page/benefit";
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +37,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    AOS.init();
     const ctx = this;
     // const doc = document.getElementById("backdrop");
     // const top = doc.offsetTop;
@@ -73,9 +76,16 @@ class App extends Component {
                 <Home />
               </Route>
               <Route exact path="/fitur">
-                <Typography variant="h1">Fitur</Typography>
+                <Fitur />
+              </Route>
+              <Route exact path="/benefit">
+                <Benefit />
+              </Route>
+              <Route exact path="/hardware">
+                <Hardware />
               </Route>
             </Switch>
+            <Footer />
           </Router>
           <Backdrop
             sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 101 }}

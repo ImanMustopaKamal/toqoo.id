@@ -50,9 +50,11 @@ const theme = createTheme({
     },
     h3: {
       fontSize: "24px",
+      fontWeight: 800,
       fontFamily: ["Manrope"].join(","),
       "@media (max-width:600px)": {
         fontSize: "20px",
+        fontWeight: 800,
         fontFamily: ["Manrope"].join(","),
       },
     },
@@ -149,6 +151,19 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderColor: "#fff",
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          top: "82px",
+          background: "rgba(255, 255, 255, 0.706)",
+          height: "fit-content",
+          // transition: "transform 225ms cubic-bezier(1, -0.16, 0, 0.99) 1s",
+          // transition:
+          //   "transform 225ms cubic-bezier(0, 0, 0.2, 1) 1000ms !important",
+          // zIndex: "1530",
         },
       },
     },

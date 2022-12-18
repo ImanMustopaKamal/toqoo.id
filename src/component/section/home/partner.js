@@ -17,7 +17,9 @@ class Partner extends Component {
       <section>
         <Grid container>
           <Grid item xs={12} md={12} lg={12}>
-            <SliderPartner />
+            <div data-aos="fade-down" data-aos-duration="1000">
+              <SliderPartner />
+            </div>
           </Grid>
         </Grid>
       </section>

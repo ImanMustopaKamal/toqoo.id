@@ -21,10 +21,24 @@ class Benefit extends Component {
         <Box className="home_benefit"></Box>
         <Container maxWidth={"lg"}>
           <Grid container spacing={4} alignItems={"center"}>
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={12}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
               <Box className="home_img_benefit"></Box>
             </Grid>
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
               <Box
                 sx={{
                   display: "block",

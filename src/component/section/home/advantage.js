@@ -40,6 +40,7 @@ class Advantage extends Component {
               md={12}
               lg={12}
               sx={{ height: { xs: "137px", md: "100%" } }}
+              data-aos="fade-down"
             >
               <Box className="home_img_advantage"></Box>
             </Grid>

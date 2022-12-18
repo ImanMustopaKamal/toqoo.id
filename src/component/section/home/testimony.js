@@ -16,28 +16,30 @@ class Testimony extends Component {
   render() {
     return (
       <section className="mt2">
-        <Container>
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: "center",
-              marginBottom: { lg: "40px", md: "0px", xs: "0px" },
-            }}
-          >
-            Testimoni <span className="text-primary">TOQOO</span>
-          </Typography>
-          <Box
-            sx={{
-              background: "url(" + Image + ")",
-              height: { xs: "350px", md: "350px", lg: "350px" },
-              backgroundPosition: "center",
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <Rating />
-          </Box>
-        </Container>
+        <div data-aos="zoom-in">
+          <Container>
+            <Typography
+              variant="h2"
+              sx={{
+                textAlign: "center",
+                marginBottom: { lg: "40px", md: "0px", xs: "0px" },
+              }}
+            >
+              Testimoni <span className="text-primary">TOQOO</span>
+            </Typography>
+            <Box
+              sx={{
+                background: "url(" + Image + ")",
+                height: { xs: "350px", md: "350px", lg: "350px" },
+                backgroundPosition: "center",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <Rating />
+            </Box>
+          </Container>
+        </div>
       </section>
     );
   }

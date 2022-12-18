@@ -62,6 +62,10 @@ section.mt3 {
   margin-top: 100px;
 }
 
+section.mt4 {
+  margin-top: 60px;
+}
+
 .home_banner {
   position: absolute;
   right: 0;
@@ -82,6 +86,194 @@ section.mt3 {
   height: 643px;
   width: 100%;
   transform: translateX(13%);
+}
+
+.banner_right {
+  background: url("./asset/images/imageSection2.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 643px;
+  width: 100%;
+  transform: translateX(13%);
+}
+
+.banner_left {
+  background: url("./asset/images/main3.png");
+  height: 650px;
+  width: 100%;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  /* transform: translateX(-12%); */
+}
+
+.banner_left::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: url("./asset/images/ListBarang.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  width: 426.83px;
+  height: 125px;
+  transform: translate(0%, -85%);
+}
+
+.banner_left::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 0;
+  background: #333348;
+  width: 636px;
+  height: 208px;
+  transform: translate(-10%, -50%);
+  z-index: -1;
+}
+
+.benefit_img1 {
+  background: url("./asset/images/main3.png");
+  height: 650px;
+  width: 100%;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.benefit_img1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: url("./asset/images/ListBarang.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  width: 426.83px;
+  height: 125px;
+  transform: translate(0%, -85%);
+}
+
+.benefit_img1::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 0;
+  background: #333348;
+  width: 480px;
+  height: 362px;
+  border-radius: 20px;
+  transform: translate(0%, -40%);
+  z-index: -1;
+}
+
+.benefit_img2 {
+  background: url("./asset/images/main3.png");
+  height: 650px;
+  width: 100%;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.benefit_img2::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: url("./asset/images/ListBarang.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  width: 426.83px;
+  height: 125px;
+  transform: translate(0%, -85%);
+}
+
+.benefit_img2::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  right: 0;
+  background: #333348;
+  width: 480px;
+  height: 362px;
+  border-radius: 20px;
+  transform: translate(0%, -40%);
+  z-index: -1;
+}
+
+.benefit_img3 {
+  background: url("./asset/images/main4.png");
+  width: 440px;
+  height: 497px;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.benefit_img3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #333348;
+  width: 445px;
+  height: 362px;
+  border-radius: 20px;
+  transform: translate(0%, -27%);
+  z-index: -1;
+}
+
+.benefit_img4 {
+  background: url("./asset/images/main7.png");
+  width: 440px;
+  height: 497px;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.benefit_img4::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #333348;
+  width: 445px;
+  height: 362px;
+  border-radius: 20px;
+  transform: translate(0%, -17%);
+  z-index: -1;
+}
+
+.benefit_img4::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 0;
+  background: #333348;
+  width: 445px;
+  height: 362px;
+  border-radius: 20px;
+  transform: translate(0%, -17%);
+  z-index: -1;
+}
+
+.card-fitur::before {
+  content: "";
+  background: url("./asset/images/main2.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 410px;
+  width: 585px;
+  position: absolute;
+  right: 0;
+  transform: translate(-3%, -34%);
 }
 
 .home_benefit {
@@ -128,6 +320,17 @@ section.mt3 {
   transform: translateY(22%);
 }
 
+.benefit_img_main {
+  background: url("./asset/images/main4.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 480px;
+  padding: 100px;
+  margin-top: 80px;
+}
+
 .slider_benefit_border {
   width: 280px;
 }
@@ -150,6 +353,15 @@ ul.slick-dots div {
 
 ul.slick-dots .slick-active div {
   background: #45b6ab !important;
+}
+
+ul.list-none-style {
+  text-decoration: none;
+  list-style: none;
+}
+
+ul.list-none-style li {
+  padding: 12px 0px;
 }
 
 /* section {
@@ -255,6 +467,67 @@ ul.slick-dots .slick-active div {
   }
   .header-menu-mobile {
     display: inline-flex !important;
+  }
+
+  .benefit_img_main {
+    margin-top: 0px;
+  }
+
+  .benefit_img1 {
+    height: 300px;
+    width: 100%;
+  }
+
+  .benefit_img1::after {
+    width: 235px;
+    height: 100px;
+    transform: translate(3%, -18%);
+  }
+
+  .benefit_img1::before {
+    width: 320px;
+    height: 236px;
+    transform: translate(6%, -40%);
+  }
+
+  .benefit_img2 {
+    height: 300px;
+    width: 100%;
+  }
+
+  .benefit_img2::after {
+    width: 235px;
+    height: 100px;
+    transform: translate(3%, -18%);
+  }
+
+  .benefit_img2::before {
+    width: 320px;
+    height: 236px;
+    border-radius: 20px;
+    transform: translate(6%, -40%);
+  }
+
+  .benefit_img3 {
+    height: 300px;
+    width: 100%;
+  }
+
+  .benefit_img3::before {
+    width: 250px;
+    height: 242px;
+    transform: translate(8%, -25%);
+  }
+
+  .benefit_img4 {
+    height: 300px;
+    width: 100%;
+  }
+
+  .benefit_img4::before {
+    width: 250px;
+    height: 242px;
+    transform: translate(8%, -25%);
   }
 }
 

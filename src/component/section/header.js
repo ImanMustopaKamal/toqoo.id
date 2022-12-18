@@ -12,8 +12,12 @@ import {
   Menu,
   MenuItem,
   Button,
+  Drawer,
+  Card,
+  SwipeableDrawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 class Header extends Component {
@@ -23,6 +27,7 @@ class Header extends Component {
       anchorEl: null,
       pagebutton: false,
       homebutton: false,
+      mobileHeader: false,
     };
   }
 
@@ -33,6 +38,16 @@ class Header extends Component {
   handleOpen = (e) => {
     this.setState({ [e.currentTarget.name]: true });
   };
+
+  mobileHeader = () => {
+    this.setState({ mobileHeader: !this.state.mobileHeader });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.setState({ mobileHeader: false });
+    }
+  }
 
   render() {
     return (
@@ -108,16 +123,32 @@ class Header extends Component {
               <Button color="secondary" component={NavLink} to={"/fitur"}>
                 Fitur
               </Button>
-              <Button color="secondary">Benefit</Button>
-              <Button color="secondary">Hardware</Button>
-              <Button color="secondary">Harga</Button>
-              <Button color="secondary">Testimoni</Button>
-              <Button color="secondary">FAQ</Button>
-              <Button color="secondary">Kontak</Button>
-              <Button color="secondary">Coba Gratis</Button>
+              <Button color="secondary" component={NavLink} to={"/benefit"}>
+                Benefit
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/hardware"}>
+                Hardware
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/price"}>
+                Harga
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/testimony"}>
+                Testimoni
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/faq"}>
+                FAQ
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/contact"}>
+                Kontak
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/try"}>
+                Coba Gratis
+              </Button>
               <Button
                 variant="contained"
                 sx={{ borderRadius: "25px", padding: "8px 40px" }}
+                component={NavLink}
+                to={"/login"}
               >
                 Login
               </Button>
@@ -126,11 +157,47 @@ class Header extends Component {
               className="header-menu-mobile"
               aria-label="delete"
               size="large"
+              onClick={this.mobileHeader}
             >
-              <MenuIcon fontSize="inherit" />
+              {this.state.mobileHeader !== true ? (
+                <MenuIcon fontSize="inherit" />
+              ) : (
+                <CloseIcon fontSize="inherit" />
+              )}
             </IconButton>
           </Box>
         </Container>
+        <Drawer
+          anchor={"top"}
+          open={this.state.mobileHeader}
+          onClose={() => {
+            this.setState({
+              mobileHeader: false,
+            });
+          }}
+        >
+          <Container maxWidth={"lg"}>
+            {/* <Card> */}
+            <Stack
+              direction="column"
+              alignItems="flex-start"
+              spacing={2}
+              sx={{ width: "100vw" }}
+            >
+              <Button color="secondary" component={NavLink} to={"/fitur"}>
+                Fitur
+              </Button>
+              <Button color="secondary">Benefit</Button>
+              <Button color="secondary">Hardware</Button>
+              <Button color="secondary">Harga</Button>
+              <Button color="secondary">Testimoni</Button>
+              <Button color="secondary">FAQ</Button>
+              <Button color="secondary">Kontak</Button>
+              <Button color="secondary">Coba Gratis</Button>
+            </Stack>
+            {/* </Card> */}
+          </Container>
+        </Drawer>
       </header>
     );
   }
@@ -147,4 +214,5 @@ function mapDispatchToProps(dispatch) {
 // export default withStyles(styles, { withTheme: true })(
 //   (connect(mapStateToProps)(Header))
 // )
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+// export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

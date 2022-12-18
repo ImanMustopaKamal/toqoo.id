@@ -16,14 +16,7 @@ class Banner extends Component {
         <Box className="home_banner"></Box>
         <Container maxWidth={"lg"}>
           <Grid container>
-            <Grid
-              item
-              xs={12}
-              md={12}
-              lg={6}
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
+            <Grid item xs={12} md={12} lg={6} data-aos="fade-right">
               <Box
                 sx={{
                   paddingTop: { xs: "0px", md: "0px", lg: "205px" },
@@ -54,7 +47,6 @@ class Banner extends Component {
                   }}
                 >
                   <Button
-                    fullWidth
                     variant="contained"
                     color="primary"
                     sx={{
@@ -62,31 +54,13 @@ class Banner extends Component {
                       borderRadius: "8px",
                     }}
                   >
-                    Mulai Sekarang
-                  </Button>
-                  <Button
-                    fullWidth
-                    variant="outlined"
-                    color="secondary"
-                    sx={{
-                      fontSize: { xs: "16px", md: "20px" },
-                      borderRadius: "8px",
-                    }}
-                  >
-                    Dapatkan Promo
+                    Coba Gratis
                   </Button>
                 </Box>
               </Box>
             </Grid>
 
-            <Grid
-              item
-              xs={12}
-              md={12}
-              lg={6}
-              data-aos="fade-left"
-              data-aos-duration="1000"
-            >
+            <Grid item xs={12} md={12} lg={6} data-aos="fade-left">
               <Box className="home_img_main"></Box>
             </Grid>
           </Grid>

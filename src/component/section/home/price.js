@@ -41,7 +41,7 @@ class Price extends Component {
         >
           <Container maxWidth={"lg"}>
             <Grid container>
-              <Grid item xs={12} md={12} lg={5}>
+              <Grid item xs={12} md={12} lg={5} data-aos="fade-right">
                 <Stack direction={"column"} spacing={3}>
                   <Typography variant="h2" sx={{ color: "#fff" }}>
                     Harga mulai dari Rp 500.000/ Bulan
@@ -79,6 +79,7 @@ class Price extends Component {
                 md={12}
                 lg={7}
                 sx={{ height: { xs: "auto", md: "auto", lg: "343px" } }}
+                data-aos="fade-left"
               >
                 <Box
                   className="home_img_main"

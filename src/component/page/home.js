@@ -12,9 +12,8 @@ import Testimony from "../section/home/testimony";
 import Device from "../section/home/device";
 import FAQ from "../section/home/faq";
 import Price from "../section/home/price";
-import Footer from "../section/footer";
 
-class Home extends Component {
+class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +32,6 @@ class Home extends Component {
         <Device />
         <FAQ />
         <Price />
-        <Footer />
       </Box>
     );
   }
@@ -47,4 +45,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
