@@ -24,15 +24,20 @@ import Footer from "./component/section/footer";
 import Home from "./component/page/home";
 import Fitur from "./component/page/fitur";
 import Hardware from "./component/page/hardware";
+import Price from "./component/page/price";
+import Benefit from "./component/page/benefit";
+import Testimony from "./component/page/testimony";
+import Faq from "./component/page/faq";
+import Contact from "./component/page/contact";
 
 import "./App.css";
-import Benefit from "./component/page/benefit";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
+      top: false,
     };
   }
 
@@ -46,6 +51,11 @@ class App extends Component {
     var header = document.getElementById("header");
     var sticky = header.offsetTop;
     window.onscroll = function () {
+      if (window.pageYOffset > 550) {
+        ctx.setState({ top: true });
+      } else {
+        ctx.setState({ top: false });
+      }
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
       } else {
@@ -84,8 +94,20 @@ class App extends Component {
               <Route exact path="/hardware">
                 <Hardware />
               </Route>
+              <Route exact path="/price">
+                <Price />
+              </Route>
+              <Route exact path="/testimony">
+                <Testimony />
+              </Route>
+              <Route exact path="/faq">
+                <Faq />
+              </Route>
+              <Route exact path="/contact">
+                <Contact />
+              </Route>
             </Switch>
-            <Footer />
+            <Footer top={this.state.top} />
           </Router>
           <Backdrop
             sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 101 }}

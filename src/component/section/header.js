@@ -45,7 +45,12 @@ class Header extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      this.setState({ mobileHeader: false });
+      this.setState({ mobileHeader: false }, () => {
+        window.scrollTo({
+          top: 0,
+          // behavior: "smooth",
+        });
+      });
     }
   }
 
@@ -141,14 +146,20 @@ class Header extends Component {
               <Button color="secondary" component={NavLink} to={"/contact"}>
                 Kontak
               </Button>
-              <Button color="secondary" component={NavLink} to={"/try"}>
+              <Button
+                color="secondary"
+                onClick={() => {
+                  window.open(process.env.REACT_APP_APPURL, "_blank");
+                }}
+              >
                 Coba Gratis
               </Button>
               <Button
                 variant="contained"
                 sx={{ borderRadius: "25px", padding: "8px 40px" }}
-                component={NavLink}
-                to={"/login"}
+                onClick={() => {
+                  window.open(process.env.REACT_APP_APPURL, "_blank");
+                }}
               >
                 Login
               </Button>
@@ -187,13 +198,32 @@ class Header extends Component {
               <Button color="secondary" component={NavLink} to={"/fitur"}>
                 Fitur
               </Button>
-              <Button color="secondary">Benefit</Button>
-              <Button color="secondary">Hardware</Button>
-              <Button color="secondary">Harga</Button>
-              <Button color="secondary">Testimoni</Button>
-              <Button color="secondary">FAQ</Button>
-              <Button color="secondary">Kontak</Button>
-              <Button color="secondary">Coba Gratis</Button>
+              <Button color="secondary" component={NavLink} to={"/benefit"}>
+                Benefit
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/hardware"}>
+                Hardware
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/price"}>
+                Harga
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/testimony"}>
+                Testimoni
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/faq"}>
+                FAQ
+              </Button>
+              <Button color="secondary" component={NavLink} to={"/contact"}>
+                Kontak
+              </Button>
+              <Button
+                color="secondary"
+                onClick={() => {
+                  window.open(process.env.REACT_APP_APPURL, "_blank");
+                }}
+              >
+                Coba Gratis
+              </Button>
             </Stack>
             {/* </Card> */}
           </Container>

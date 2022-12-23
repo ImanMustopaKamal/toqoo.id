@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 import {
   Box,
@@ -9,17 +9,24 @@ import {
   Container,
   IconButton,
   Stack,
-  Menu,
-  MenuItem,
   Button,
   Grid,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 class Footer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      top: false,
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.top !== this.props.top) {
+      this.setState({ top: this.props.top });
+    }
   }
 
   render() {
@@ -162,7 +169,8 @@ class Footer extends Component {
                       justifyContent: "flex-start",
                       padding: 0,
                     }}
-                    component={NavLink} to={"/contact"}
+                    component={NavLink}
+                    to={"/contact"}
                   >
                     Kontak Kami
                   </Button>
@@ -173,7 +181,9 @@ class Footer extends Component {
                       justifyContent: "flex-start",
                       padding: 0,
                     }}
-                    component={NavLink} to={"/try"}
+                    onClick={() => {
+                      window.open(process.env.REACT_APP_APPURL, "_blank");
+                    }}
                   >
                     Coba Gratis
                   </Button>
@@ -191,7 +201,8 @@ class Footer extends Component {
                       justifyContent: "flex-start",
                       padding: 0,
                     }}
-                    component={NavLink} to={"/faq"}
+                    component={NavLink}
+                    to={"/faq"}
                   >
                     FAQ
                   </Button>
@@ -202,7 +213,8 @@ class Footer extends Component {
                       justifyContent: "flex-start",
                       padding: 0,
                     }}
-                    component={NavLink} to={"/termcondition"}
+                    component={NavLink}
+                    to={"/termcondition"}
                   >
                     Term & Condition
                   </Button>
@@ -213,7 +225,8 @@ class Footer extends Component {
                       justifyContent: "flex-start",
                       padding: 0,
                     }}
-                    component={NavLink} to={"/privacypolicy"}
+                    component={NavLink}
+                    to={"/privacypolicy"}
                   >
                     Privacy Policy
                   </Button>
@@ -268,6 +281,38 @@ class Footer extends Component {
             </Grid>
           </Container>
         </Box>
+        {this.state.top ? (
+          <IconButton
+            aria-label="delete"
+            size="large"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            sx={{
+              position: "fixed",
+              bottom: "5%",
+              right: "3%",
+              width: "45px",
+              height: "45px",
+              transform: "translate(-10%, -10%)",
+              background: "#52cec2",
+              zIndex: 1305,
+              "&:hover": {
+                background: "#52cec2",
+              },
+            }}
+            onClick={(e) => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ArrowUpwardIcon
+              fontSize="inherit"
+              sx={{ width: "20px", height: "20px" }}
+            />
+          </IconButton>
+        ) : null}
       </footer>
     );
   }
@@ -281,4 +326,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Footer));

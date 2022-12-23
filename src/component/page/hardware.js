@@ -4,14 +4,16 @@ import { bindActionCreators } from "redux";
 
 import { Box } from "@mui/material";
 
-import Banner from "../section/fitur/banner";
-import Section1 from "../section/fitur/section1";
+import Banner from "../box/banner";
+import Section1 from "../section/hardware/section1";
 import Section2 from "../section/fitur/section2";
 import Section3 from "../section/fitur/section3";
 import Section4 from "../section/fitur/section4";
 import Section5 from "../section/fitur/section5";
 import Section6 from "../section/fitur/section6";
 import Section7 from "../section/fitur/section7";
+import Device from "../section/home/device";
+import Recomendation from "../section/hardware/recomendation";
 
 class HardwarePage extends Component {
   constructor(props) {
@@ -24,14 +26,10 @@ class HardwarePage extends Component {
   render() {
     return (
       <Box className="content">
-        <Banner />
+        <Banner title={["Hardware untuk Kebutuhan Bisnis Anda"]} />
+        <Device />
+        <Recomendation />
         <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
       </Box>
     );
   }

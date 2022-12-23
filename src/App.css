@@ -343,6 +343,10 @@ section.mt4 {
   height: 249px;
 }
 
+ul.slick-dots {
+  margin: -20px 0px;
+}
+
 ul.slick-dots div {
   box-sizing: border-box;
   width: 15px;
@@ -509,25 +513,53 @@ ul.list-none-style li {
   }
 
   .benefit_img3 {
-    height: 300px;
+    height: 240px;
     width: 100%;
   }
 
   .benefit_img3::before {
-    width: 250px;
-    height: 242px;
+    width: 220px;
+    height: 210px;
     transform: translate(8%, -25%);
   }
 
   .benefit_img4 {
-    height: 300px;
+    height: 220px;
     width: 100%;
   }
 
   .benefit_img4::before {
+    display: none;
     width: 250px;
     height: 242px;
     transform: translate(8%, -25%);
+  }
+
+  .benefit_img4::after {
+    width: 220px;
+    height: 220px;
+    transform: translate(0%, -5%);
+  }
+
+  .card-fitur::before {
+    display: none;
+    height: 210px;
+    width: 350px;
+    transform: translate(-3%, -100%);
+  }
+
+  .banner_right {
+    height: 240px;
+  }
+
+  .banner_left {
+    height: 240px;
+    background-position: center;
+  }
+
+  .banner_left::after {
+    width: 220px;
+    transform: translate(0%, 8%);
   }
 }
 

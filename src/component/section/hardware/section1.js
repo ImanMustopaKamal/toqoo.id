@@ -12,7 +12,7 @@ import {
   Card,
 } from "@mui/material";
 
-class Section7 extends Component {
+class Section1 extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,7 +20,7 @@ class Section7 extends Component {
 
   render() {
     return (
-      <section className="mt4" style={{ marginBottom: "100px" }}>
+      <section className="mt1" style={{ marginBottom: "100px" }}>
         <Container maxWidth={"lg"}>
           <Card
             className="card-fitur"
@@ -33,11 +33,7 @@ class Section7 extends Component {
               borderRadius: "20px",
             }}
           >
-            <Stack
-              direction="column"
-              spacing={4}
-              sx={{ width: { xs: "100%", md: "50%", lg: "50%" } }}
-            >
+            <Stack direction="column" spacing={4} sx={{ width: { lg: "50%" } }}>
               <Typography variant="h2" sx={{ color: "#fff" }}>
                 Lorem Ipsum <span className="text-primary">Bersama Kami</span>
               </Typography>
@@ -72,4 +68,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Section7);
+export default connect(mapStateToProps, mapDispatchToProps)(Section1);

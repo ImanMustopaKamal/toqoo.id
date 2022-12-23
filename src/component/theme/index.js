@@ -118,18 +118,20 @@ const theme = createTheme({
     MuiAccordion: {
       styleOverrides: {
         root: {
-          marginBottom: "20px",
+          // marginBottom: "20px",
           boxShadow: "none",
           borderRadius: "12px",
           "&:before": {
             background: "unset",
           },
+
         },
       },
     },
     MuiAccordionSummary: {
       styleOverrides: {
         root: {
+          // marginBottom: "20px",
           background: "#EDEFF1",
           borderTopLeftRadius: "12px",
           borderTopRightRadius: "12px",
@@ -164,6 +166,40 @@ const theme = createTheme({
           // transition:
           //   "transform 225ms cubic-bezier(0, 0, 0.2, 1) 1000ms !important",
           // zIndex: "1530",
+        },
+      },
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: "20px 30px",
+        },
+      },
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: "20px 30px",
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          borderColor: "rgb(239 241 245)",
+          borderRadius: "8px",
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          background: "#EFF1F5",
+          borderRadius: "8px",
+        },
+        root: {
+          background: "#EFF1F5",
+          borderRadius: "8px",
         },
       },
     },
